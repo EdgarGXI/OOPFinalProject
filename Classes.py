@@ -1,13 +1,16 @@
 class Info:
+    #This class contains all the information of the points of interest that the user might need,
+    #also, will help with comparing and interacting with the code to throw a result with other classes,
+    #for example, to find a location
   def __init__(self):
-    ...
+    pass
 
 class Coord:
   def __init__(self):
     x:float
     y:float
   def getCord(x,y):
-    ...
+    pass
       #Will convert the coordinates obtained from the folium map, pinpoint,
       #or the input of the user to a format that can be used for comparing
 
@@ -21,11 +24,12 @@ class Category(Info):
   def displayCat(type_bldn):
     #Will display the category
     print(type_bldn)
-    ...
+
   def compareCat(type_bldn, temp):
     #If called, will compare the categories for an inquiry
     # (Probably won´t be needed)
-    ...
+    pass
+
 
 class Building(Info):
   #This class will inherit from the Info class, so that it searches through
@@ -38,11 +42,11 @@ class Building(Info):
   def displayBldn(type_bldn):
     #Will display the category
     print(type_bldn)
-    ...
+    pass
   def compareBldn(type_bldn, temp):
     #If called, will compare the categories for an inquiry
     # (Probably won´t be needed)
-    ...
+    pass
 
 
 
@@ -62,6 +66,13 @@ class Input(Info):
     #This method will ask for the user to input it´s location
     #It could receive "Fuente", also, could ask for a search inquiry,
     #i.g "Busca salones"
+    a=input("Que desea hacer?, Buscar o Localizarse")
+    if(a=="Buscar"):
+        user_input=input("Inserte su busqueda ")
+    if(a=="Localizarse"):
+        user_input=input("Inserte su localizacion ")
+
+    
     return user_input
   def search(user_input):
     #This method will compare the user´s input in the database
@@ -101,6 +112,10 @@ class File:
     def getFile(filelocate):
       # Look for the file of the database
       return filelocate
+    
+    def prueba():
+        print("Hello")
+        return
 
 
 class Photo(File):
@@ -163,8 +178,3 @@ class Map(Input, Legend, Bubble):
   def displayMap(bubbles, legend, user_track):
     # Method that display the map, legend and buubles all together
     pass
-  
-
-
-  
-    
