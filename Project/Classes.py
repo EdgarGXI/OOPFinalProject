@@ -111,7 +111,10 @@ class File:
         
     def getFile(filelocate):
       # Look for the file of the database
-      return filelocate
+      archivo=open(filelocate)
+      archivo.readlines()
+      return archivo
+    
     
     def prueba():
         print("Hello")
