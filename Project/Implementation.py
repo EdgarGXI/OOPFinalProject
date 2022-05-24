@@ -81,47 +81,52 @@ combo_4 = ttk.Combobox(
     values=["LePetit", "duNord Plaza", "1966", "Café duNord", "duNord Terrase", "El Camion", "La Gofreria"]
 )
 
-combo_4.place(x=40, y=340)
-
+text_4 = Label(root, text="Restaurantes", font=("Calibri", 12))
+text_4.place(x=70, y=390)
+combo_4.place(x=40, y=420)
 
 
 # Menu 5 = laboratorios
 combo_5 = ttk.Combobox(
     state="readonly",
-    values=["Bloque A", "Bloque B", "Bloque C", "Bloque D"]
+    values=["1", "2", "3", "4","5"]
 )
-
-#combo_5.place(x=40, y=420)
+text_5 = Label(root, text="Laboratorios", font=("Calibri", 12))
+text_5.place(x=1155, y=120)
+combo_5.place(x=1125, y=150)
 
 
 
 # Menu 6 = bambu
 combo_6 = ttk.Combobox(
     state="readonly",
-    values=["Bloque A", "Bloque B", "Bloque C", "Bloque D"]
+    values=["1", "2"]
 )
+text_6 = Label(root, text="Bambús", font=("Calibri", 12))
+text_6.place(x=1165, y=210)
+combo_6.place(x=1125, y=240)
 
-#combo_6.place(x=40, y=500)
 
 
-
-# Menu 7 = bambu
+# Menu 7 = Puerta
 combo_7 = ttk.Combobox(
     state="readonly",
-    values=["Bloque A", "Bloque B", "Bloque C", "Bloque D"]
+    values=["4", "7"]
 )
+text_7 = Label(root, text="Restaurantes", font=("Calibri", 12))
+text_7.place(x=1155, y=300)
+combo_7.place(x=1125, y=330)
 
-#combo_7.place(x=40, y=500)
 
 
-
-# Menu 8 = bambu
+# Menu 8 = SDU
 combo_8 = ttk.Combobox(
     state="readonly",
-    values=["Bloque A", "Bloque B", "Bloque C", "Bloque D"]
+    values=["B", "G", "K"]
 )
-
-#combo_8.place(x=40, y=500)
+text_8 = Label(root, text="Restaurantes", font=("Calibri", 12))
+text_8.place(x=1155, y=390)
+combo_8.place(x=1125, y=420)
 
 
 
