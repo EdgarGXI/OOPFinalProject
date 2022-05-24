@@ -5,146 +5,153 @@ from tkinter import *
 from tkinter import simpledialog
 import pandas as pd
 
-# <------------------------------------ Base de datos -------------------------------------->
+# <----------------------------------------- Base de datos ------------------------------------------->
 
 db = pd.read_csv("https://raw.githubusercontent.com/EdgarGXI/OOPFinalProject/main/database.csv")
 #print(db)
 
 
 
-# <------------------------------- Configuración de ventana -------------------------------->
+# <------------------------------------ Configuración de ventana ------------------------------------->
 
-root= Tk()
-root.title("Mapa - Universidad del norte")
-root.geometry("1300x720")
-root.resizable(width=False, height=False)
-esp3 = Label(root, text=" ")
+root= Tk() # Ventana
+root.title("Mapa - Universidad del norte") # Titulo ventana
+root.geometry("1300x720") # Tamaño ventana
+root.resizable(width=False, height=False) # Evitar modificar tamaño de ventana 
+esp3 = Label(root, text=" ") # Espacio 
 esp3.pack()
-title = Label(root, text = "CompaniUN  -  Mapa Universidad del Norte", font=("Calibri", 25))
+title = Label(root, text = "CompaniUN  -  Mapa Universidad del Norte", font=("Calibri", 25)) # Titulo 
 title.pack()
 
+
+
+# <------------------------------------- Mostrar mapa en pantalla ------------------------------------>
+
 my_label= LabelFrame(root)
-my_label.pack(pady=10, padx=20)
-
-
-# <-------------------------------- Mostrar mapa en pantalla ------------------------------>
-
-map_widget = tkintermapview.TkinterMapView(my_label, width=850, height=420,corner_radius=20)
-map_widget.set_position(11.018985992247588, -74.85068279601066)
+my_label.pack(pady=10, padx=20) # Centrar mapa en la ventana
+map_widget = tkintermapview.TkinterMapView(my_label, width=850, height=450,corner_radius=20) # Mostrar mapa en la ventana
+map_widget.set_position(11.018985992247588, -74.85068279601066) # Coordenadas universidad
+map_widget.set_zoom(18) # Zoom mapa
 map_widget.pack()
-map_widget.set_zoom(18)
 
 
 
-# <---------------------- Botones en pantalla ------------------------>
+# <-------------------------------------- Caja de opciones en pantalla ---------------------------------------->
 
-# Menu 1 = bloques
-combo = ttk.Combobox(
-    state="readonly",
-    values=["Bloque A", "Bloque B", "Bloque C", "Bloque D"]
+# Menu 1 -> Bloques
+combo = ttk.Combobox( 
+    state="readonly", # Permite solo escoger opciones
+    values=["Bloque A", "Bloque B", "Bloque C", "Bloque D"] # Opciones menú 1
 )
 
-text_1 = Label(root, text="Bloques", font=("Calibri", 12))
-text_1.place(x=85, y=123)
-combo.place(x=40, y=150)
-m = combo.get()
-print(m)
+text_1 = Label(root, text="Bloques", font=("Calibri", 12)) # Texto encima del menú
+text_1.place(x=85, y=123) # Coordenadas texto
+combo.place(x=40, y=150) # Coordenadas menú
 
 
-# Menu 2 = oficinas
+
+# Menu 2 -> Oficinas
 combo_2 = ttk.Combobox(
-    state="readonly",
-    values=["CREE", "Bienestar", "Bienestar bloque M"]
+    state="readonly", # Permite solo escoger opciones
+    values=["CREE", "Bienestar", "Bienestar bloque M"] # Opciones menú 2
 )
 
-text_2 = Label(root, text="Oficinas", font=("Calibri", 12))
-text_2.place(x=85, y=218)
-combo_2.place(x=40, y=240)
+text_2 = Label(root, text="Oficinas", font=("Calibri", 12)) # Texto encima del menú
+text_2.place(x=85, y=212) # Coordenadas texto
+combo_2.place(x=40, y=240) # Coordenadas menú
 
 
 
 # Menu 3 = servicios
 combo_3 = ttk.Combobox(
-    state="readonly",
-    values=["Biblioteca", "Casa de Estudio", "duNord Graphique", "Km5","duNord Store ", "Cajero G", "Cajero F", "Cajero C", "Corresponsal", "M.Transmetro", "Museo", "Centro Médico", "LeSalon"]
+    state="readonly", # Permite solo escoger opciones
+    values=["Biblioteca", "Casa de Estudio", "duNord Graphique", "Km5","duNord Store ", "Cajero G", "Cajero F", "Cajero C", "Corresponsal", "M.Transmetro", "Museo", "Centro Médico", "LeSalon"] # Opciones menú 3
 )
 
-text_3 = Label(root, text="Servicios")
-text_3.place(x=85, y=308)
-combo_3.place(x=40, y=330)
+text_3 = Label(root, text="Servicios", font=("Calibri", 12)) # Texto encima del menú
+text_3.place(x=85, y=300) # Coordenadas texto
+combo_3.place(x=40, y=330) # Coordenadas menú
 
 
 
 # Menu 4 = restaurantes
 combo_4 = ttk.Combobox(
-    state="readonly",
-    values=["LePetit", "duNord Plaza", "1966", "Café duNord", "duNord Terrase", "El Camion", "La Gofreria"]
+    state="readonly", # Permite solo escoger opciones
+    values=["LePetit", "duNord Plaza", "1966", "Café duNord", "duNord Terrase", "El Camion", "La Gofreria"] # Opciones menú 4
 )
 
-text_4 = Label(root, text="Restaurantes", font=("Calibri", 12))
-text_4.place(x=70, y=390)
-combo_4.place(x=40, y=420)
+text_4 = Label(root, text="Restaurantes", font=("Calibri", 12)) # Texto encima del menú
+text_4.place(x=70, y=390) # Coordenadas texto
+combo_4.place(x=40, y=420) # Coordenadas menú
+
 
 
 # Menu 5 = laboratorios
 combo_5 = ttk.Combobox(
-    state="readonly",
-    values=["1", "2", "3", "4","5"]
+    state="readonly", # Permite solo escoger opciones
+    values=["1", "2", "3", "4","5"] # Opciones menú 5
 )
-text_5 = Label(root, text="Laboratorios", font=("Calibri", 12))
-text_5.place(x=1155, y=120)
-combo_5.place(x=1125, y=150)
+
+text_5 = Label(root, text="Laboratorios", font=("Calibri", 12)) # Texto encima del menú
+text_5.place(x=1155, y=120) # Coordenadas texto
+combo_5.place(x=1125, y=150) # Coordenadas menú
 
 
 
 # Menu 6 = bambu
 combo_6 = ttk.Combobox(
-    state="readonly",
-    values=["1", "2"]
+    state="readonly", # Permite solo escoger opciones
+    values=["1", "2"] # Opciones menú 6
 )
-text_6 = Label(root, text="Bambús", font=("Calibri", 12))
-text_6.place(x=1165, y=210)
-combo_6.place(x=1125, y=240)
+
+text_6 = Label(root, text="Bambús", font=("Calibri", 12)) # Texto encima del menú
+text_6.place(x=1165, y=210) # Coordenadas texto
+combo_6.place(x=1125, y=240) # Coordenadas menú
 
 
 
 # Menu 7 = Puerta
 combo_7 = ttk.Combobox(
-    state="readonly",
-    values=["4", "7"]
+    state="readonly", # Permite solo escoger opciones
+    values=["4", "7"] # Opciones menú 7
 )
-text_7 = Label(root, text="Restaurantes", font=("Calibri", 12))
-text_7.place(x=1155, y=300)
-combo_7.place(x=1125, y=330)
+
+text_7 = Label(root, text="Puertas", font=("Calibri", 12)) # Texto encima del menú
+text_7.place(x=1170, y=300) # Coordenadas texto
+combo_7.place(x=1125, y=330) # Coordenadas menú
 
 
 
 # Menu 8 = SDU
 combo_8 = ttk.Combobox(
-    state="readonly",
-    values=["B", "G", "K"]
+    state="readonly", # Permite solo escoger opciones
+    values=["B", "G", "K"] # Opciones menú 8
 )
-text_8 = Label(root, text="Restaurantes", font=("Calibri", 12))
-text_8.place(x=1155, y=390)
-combo_8.place(x=1125, y=420)
+
+text_8 = Label(root, text="Salas de estudio", font=("Calibri", 12)) # Texto encima del menú
+text_8.place(x=1140, y=390) # Coordenadas texto
+combo_8.place(x=1125, y=420) # Coordenadas menú
 
 
 
-#esp1 = Label(root, text = " ")
-#esp2 = Label(root, text = " ")
-#ask = Label(root, text = "Indique hacia donde quiere ir: ", font=("Arial", 14))
-#user2 = Entry(root, width=50)
-#ask.pack()
-#esp1.pack()
-#user2.pack()
+esp2 = Label(root, text = " ") # Espacio
+ask = Label(root, text = "Indique en donde se encuentra: ", font=("Arial", 14))
+esp3 = Label(root, text = " ")
+user2 = Entry(root, width=50) # Input box del usuario
+esp1 = Label(root, text = " ")
+ask.pack()
+esp1.pack()
+esp2.pack()
+user2.pack()
+esp3.pack()
 
 
-#def myClick():
-  #  boton=Label(root, text="Escribiste: " + user2.get()) 
- #   boton.pack()
+def myClick():
+    boton=Label(root, text="Escribiste: " + user2.get()) # Imprime input del usuario
+    boton.pack()
 
-#myButton = Button(root, text="Buscar", command=myClick)
-#myButton.pack()
+myButton = Button(root, text="Buscar", command=myClick) # Boton que almacena la input del usuario
+myButton.pack()
 
 
 root.mainloop()
