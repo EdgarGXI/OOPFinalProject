@@ -134,6 +134,8 @@ combo_8.place(x=1125, y=420) # Coordenadas menú
 
 
 
+# <-------------------- Almacenar input de donde esta el usuario -------------------->
+
 esp2 = Label(root, text = " ") # Espacio
 ask = Label(root, text = "Indique en donde se encuentra: ", font=("Arial", 14))
 esp3 = Label(root, text = " ")
@@ -146,6 +148,7 @@ user2.pack()
 esp3.pack()
 
 
+# <-------------------------- Boton del input del usuario ----------------------------->
 def myClick():
     boton=Label(root, text="Escribiste: " + user2.get()) # Imprime input del usuario
     boton.pack()
