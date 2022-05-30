@@ -10,8 +10,6 @@ import pandas as pd
 db = pd.read_csv("https://raw.githubusercontent.com/EdgarGXI/OOPFinalProject/main/database.csv")
 #print(db)
 
-
-
 # <----------------------------------------- Configuración de ventana ------------------------------------------>
 
 root= Tk() # Ventana
@@ -154,7 +152,7 @@ if user2.get() == "Museo":
     marker_3 = map_widget.set_marker(11.020059, -74.851332, text="Tower", text_color="green",
                                  marker_color_circle="black", marker_color_outside="gray40", font=("Helvetica Bold", 24))
 
-
+bandera= True
 # <--------------------------------------------- Boton del input del usuario ----------------------------------------------->
 def myClick():
     boton=Label(root, text="Escribiste: " + user2.get()) # Imprime input del usuario
@@ -163,28 +161,50 @@ def myClick():
     if user2.get() == "Museo":
         marker_3 = map_widget.set_marker(11.020059, -74.851332, text="Usted está aqui", text_color="black",
                                  marker_color_circle="black", marker_color_outside="gray40", font=("Helvetica Bold", 20))
+        laposicion1=(11.020059, -74.851332)
     if user2.get() == "Puerta 7":
         marker_3 = map_widget.set_marker(11.019204, -74.849621, text="Usted está aqui", text_color="black",
                                 marker_color_circle="red", marker_color_outside="gray40", font=("Helvetica Bold", 20))
+        laposicion1=(11.019204, -74.849621)
     if user2.get() == "Bloque B":
         marker_3 = map_widget.set_marker(11.018760, -74.851008, text="Usted está aqui", text_color="black",
                                  marker_color_circle="black", marker_color_outside="gray40", font=("Helvetica Bold", 20))
+        laposicion1=(11.018760, -74.851008)
     if user2.get() == "Puerta 7":
         marker_3 = map_widget.set_marker(11.019204, -74.849621, text="Usted está aqui", text_color="black",
                                 marker_color_circle="red", marker_color_outside="gray40", font=("Helvetica Bold", 20))
+        laposicion1=(11.019204, -74.849621)
     if combo_3.get() == "Casa de Estudio":
         marker_3 = map_widget.set_marker(11.017580, -74.850313, text="Casa de estudio", text_color="black",
                                 marker_color_circle="blue", marker_color_outside="gray40", font=("Helvetica Bold", 20))
+        laposicion2=(11.017580, -74.850313)
     if combo_2.get() == "CREE":
         marker_3 = map_widget.set_marker(11.019625, -74.849638, text="CREE", text_color="black",
                                 marker_color_circle="blue", marker_color_outside="gray40", font=("Helvetica Bold", 20))
+        laposicion2=(11.019625, -74.849638)                       
     if combo_4.get() == "Café duNord":
         marker_3 = map_widget.set_marker(11.019539, -74.850265, text="Café duNord", text_color="black",
                                 marker_color_circle="blue", marker_color_outside="gray40", font=("Helvetica Bold", 20))
+        laposicion2=(11.019539, -74.850265)
     if combo_8.get() == "B":
         marker_3 = map_widget.set_marker(11.018778, -74.850265, text="SDU 8", text_color="black",
                                 marker_color_circle="blue", marker_color_outside="gray40", font=("Helvetica Bold", 20))
+        laposicion2=(11.018778, -74.850265)
+    def limpiar():
+        botonLimpiar = Label(root)
+        botonLimpiar.pack()
 
+        marker_3.delete()
+        path_1.delete()
+    mybutton2 = Button(root, text="Limpiar", command=limpiar)
+    mybutton2.place(x=820, y=590)
+
+    path_1= map_widget.set_path([laposicion1,laposicion2])
+    path_1.draw()
+    
+
+
+   
 
 myButton = Button(root, text="Buscar", command=myClick) # Boton que almacena la input del usuario
 myButton.pack()
