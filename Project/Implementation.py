@@ -1,31 +1,25 @@
-from asyncio.windows_events import NULL
-from tkinter import messagebox, ttk
+from tkinter import  ttk
 import tkinter as tk
-from turtle import clear
-from requests import delete
 import tkintermapview
 from tkinter import *
-from tkinter import simpledialog
-import pandas as pd
 
-# <---------------------------------------------- Base de datos ------------------------------------------------>
-db = pd.read_csv("https://raw.githubusercontent.com/EdgarGXI/OOPFinalProject/main/database.csv")
-#print(db)
 
 # <----------------------------------------- Configuración de ventana ------------------------------------------>
 root= Tk() # Ventana
-root.title("Mapa - Universidad del norte") # Titulo ventana
-root.geometry("1150x700") # Tamaño ventana
+root.title("CompaniUN  -  Mapa Universidad del Norte") # Titulo ventana
+root.geometry("1150x660") # Tamaño ventana
 root.resizable(width=False, height=False) # Evitar modificar tamaño de ventana 
 esp3 = Label(root, text=" ") # Espacio 
-esp3.pack()
-title = Label(root, text = "CompaniUN  -  Mapa Universidad del Norte", font=("Calibri", 25)) # Titulo 
+#esp3.pack()
+title = Label(root, text = "CompaniUN", font=("Calibri", 30)) # Titulo 
 title.pack()
 
 # <------------------------------------------ Mostrar mapa en pantalla ----------------------------------------->
 my_label= LabelFrame(root)
+my_label.config(relief="sunken")
+my_label.config(bd=5)
 my_label.pack(pady=10, padx=20) # Centrar mapa en la ventana
-map_widget = tkintermapview.TkinterMapView(my_label, width=850, height=450,corner_radius=20) # Mostrar mapa en la ventana
+map_widget = tkintermapview.TkinterMapView(my_label, width=850, height=450,corner_radius=5) # Mostrar mapa en la ventana
 map_widget.set_position(11.018985992247588, -74.85068279601066) # Coordenadas universidad
 map_widget.set_zoom(18) # Zoom mapa
 map_widget.pack()
@@ -65,6 +59,7 @@ lugar_user.place(x=320, y=575) # Coordenadas menú
 def buscar():
     boton=Label(root) # Imprime input del usuario
     boton.pack()
+
     def limpiar():
         botonLimpiar = Label(root)
         botonLimpiar.pack()
@@ -176,9 +171,9 @@ def buscar():
         pos_1=(11.019744, -74.849635)
 
     if lugar_user.get() == "Cajero F":
-        marker_user = map_widget.set_marker(1.018612, -74.850126, text="Estás Acá", text_color="black",
+        marker_user = map_widget.set_marker(11.018612, -74.850126, text="Estás Acá", text_color="black",
                                  marker_color_circle="red", marker_color_outside="gray40", font=("Helvetica Bold", 20))
-        pos_1=(1.018612, -74.850126)
+        pos_1=(11.018612, -74.850126)
 
     if lugar_user.get() == "Cajero C":
         marker_user = map_widget.set_marker(11.019097, -74.850779, text="Estás Acá", text_color="black",
@@ -415,9 +410,9 @@ def buscar():
         pos_2=(11.019744, -74.849635)
 
     if opciones.get() == "Cajero F":
-        marker = map_widget.set_marker(1.018612, -74.850126, text="Cajero F", text_color="black",
+        marker = map_widget.set_marker(11.018612, -74.850126, text="Cajero F", text_color="black",
                                  marker_color_circle="blue", marker_color_outside="gray40", font=("Helvetica Bold", 20))
-        pos_2=(1.018612, -74.850126)
+        pos_2=(11.018612, -74.850126)
 
     if opciones.get() == "Cajero C":
         marker = map_widget.set_marker(11.019097, -74.850779, text="Cajero C", text_color="black",
