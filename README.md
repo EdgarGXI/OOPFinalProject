@@ -7,13 +7,14 @@ Jean Herran - Edgar Garcia
 ![alt text](https://i.imgur.com/BH6ekWI.png)
 
 
-# Para probar nuestro codigo
+# Para probar nuestra app y/o código
 
-1) Clonar nuestro repositorio a tu entorno de desarrollo
-2) Abrir la carpeta "Project"
-3) Abrir el archivo "Implementation.py"
-4) Instalar la libreria folium a través de la terminal con -pip install folium
-5) Correr el código
+1) Descargar e instalar Python desde https://www.python.org/ , y asegurate que en el proceso de instalacion marcar la casilla de instalar pip y/o complementos
+2) Descargar o clonar nuestro repositorio a tu PC y opcionalmente a tu entorno de desarrollo
+3) Abrir una terminal o CMD y escribir el comando "cd y la ruta en la que esté el repositorio"
+4) Escribir en la terminal py -m install Tkinter, una vez finalice, escribir py -m install Tkintermapview, una vez finalice, escribir py -m install Pandas
+5) Si los comandos del paso anterior no funcionan, reemplaza py -m, con pip, ej: pip install Tkinter
+6) Abrir la carpeta "Project"
+7) Abrir el archivo "Implementation.py"
+8) Si lo deseas, puedes abrir la carpeta en tu entorno de desarrollo preferido y revisar el código o probar con el.
 
- ## Nota extra:
-Sea libre de modificar el archivo "Implementation.py" y el archivo "Classes.py" para experimentar con el código
