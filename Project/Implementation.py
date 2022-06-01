@@ -135,7 +135,7 @@ def buscar():
                                 marker_color_circle="red", marker_color_outside="gray40", font=("Helvetica Bold", 20))
         pos_1=(11.019971, -74.848069)
 
-    if lugar_user.get() == "Puerto 4":
+    if lugar_user.get() == "Puerta 4":
         marker_user = map_widget.set_marker(11.017380, -74.850544, text="Estás Acá", text_color="black",
                                  marker_color_circle="red", marker_color_outside="gray40", font=("Helvetica Bold", 20))
         pos_1=(11.017380, -74.850544)
