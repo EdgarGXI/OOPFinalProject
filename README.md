@@ -4,7 +4,7 @@ CompaniUN
 
 Jean Herran - Edgar Garcia
 
-![alt text](https://imgur.com/a/qhs3pNi)
+![alt text](https://imgur.com/eQhKUuG.png)
 
 
 # Para probar nuestra app y/o código
