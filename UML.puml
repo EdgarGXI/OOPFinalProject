@@ -1,104 +1,51 @@
 @startuml Antep
 
-class Map{
-    +bubbles: Bubble
-    +legend: Legend
-    +user_tracker: Tracker
-    +displayMap(bubbles, legend, user_tracker)
+class TkinterMapView{
+    +pack(int, int)
+    +set_position(int, int)
+    +set_zoom(int)
 }
 
 
-class Legend{
-    +nombre: Info
-    +block_indicator: Info
-    +displayLegend(nombre, block_indicator)
-}
-
-class Bubble{
-    +info: Info
-    +bubble_located: Coord
-    +foto_e: Photo
-    +display_bubble(info, buuble_located, foto_e)
-}
-
-class Info{
-    +nombre: str
-    +indicator: int
-    +categoria: Building
-    +data: File
-    +display_info(nombre, categoria, data)
-}
-
-class Photo{
-    +foto: File
-    +display_photo(foto)
-}
-
-class File{
-    -filelocation: str
-    +getFile(filelocation)
-}
-
-class Coord{
-    +x: float
-    +y: float
-    +get_coord(x, y)
-}
-
-class Nearest{
-    +current_input: Input
-    +user_coords: Tracker
-    +displayNearest(current_input, user_coords)
-}
-
-class Input{
-    +user_input : str
-    +comparator: Building
-    +current_user_loc: Tracker
-    +actual_info: Info
-    +get.input(user_input)
-    +buscar(user_input, compartor, current_user_loc)
-    +showInfo(user_input, compartor, actual_info)
-}
-
-class Building{
-    +building_name: str
-    +building_coords: Coord
-    +building_cat: Category
-    +display_building(building_name)
-}
-
-class Category{
-    +type_of_building: str
-    +display_category(type_of_building)
-}
-
-class UID{
-    -get_UID()
-}
-
-class Authenticator{
-    -current_ip: Ip
-    -current_UID: UID
-    -validate(current_ip, current_UID)
+class Marker{
+    +get(str)
+    +set_marker(int, int)
 }
 
 
+class Button{
+    +get(strt)
+    +buscar(set_marker())
+    +limpiar(delete())
+    +place(int, int)
+}
 
-Map "1" --* "1"Legend
-Map "1" --* "*" Bubble    
-Legend "1" --|> "*"Info
-Input "1" <- "*"Building
-Input "1"-|> "*"Info
-Bubble "*"--|> "*"Info
-Bubble "*"-* "*"Coord
-Info "*"--|> "*"Building
-Info "*"--|> "*"File
-Photo "*"--|> "*"File
-Authenticator "1"--* "1" UID
-Building "*"*-- "1"Coord
-Building "*"*-- "1"Category
-Nearest "1"*-- "1"Input
 
+class Root{
+    +title(str)
+    +geometry(str)
+    +resizable(int, int)
+    +pack(int, int)
+}
+
+class ttk{
+    +Combobox(state, values)
+    +place(int, int)
+}
+
+class Label{
+    +place(int, int)
+}
+
+class Tkinter{
+
+}
+
+
+Tkinter <-- Label
+Tkinter <- Root
+Tkinter <-- Button
+Marker <- TkinterMapView
+TkinterMapView <-- Root
 
 @enduml 
